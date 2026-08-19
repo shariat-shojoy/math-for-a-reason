@@ -4,8 +4,7 @@ Algorithms are cool. This is a map of the ones worth knowing — each explained
 in plain language, made interactive so you can watch it think on your own
 input, and traced back to the real systems that actually run on it.
 
-**Live site:** `https://<your-username>.github.io/math-for-a-reason/`
-_(update after your first deploy — see below)_
+**Live site:** 
 
 ## Why this exists
 
