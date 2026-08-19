@@ -4,7 +4,7 @@ Algorithms are cool. This is a map of the ones worth knowing — each explained
 in plain language, made interactive so you can watch it think on your own
 input, and traced back to the real systems that actually run on it.
 
-**Live site:** 
+**Live site:** https://shariat-shojoy.github.io/math-for-a-reason/
 
 ## Why this exists
 
