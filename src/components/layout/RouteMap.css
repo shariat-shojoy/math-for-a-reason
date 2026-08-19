@@ -1,0 +1,105 @@
+.route-map {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 var(--step-3) var(--step-6);
+}
+
+.route-map-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: var(--step-2);
+}
+
+.route-line {
+  fill: none;
+  stroke: var(--grid-line);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.route-line-pulse {
+  fill: none;
+  stroke: var(--signal);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 8 92;
+  stroke-dashoffset: 100;
+  animation: travel 2.2s ease-out 0.3s forwards;
+}
+
+@keyframes travel {
+  to { stroke-dashoffset: -8; }
+}
+
+.route-station {
+  opacity: 0;
+  animation: pop-in 0.4s ease-out forwards;
+  transform-origin: center;
+}
+
+.route-station-next-circle {
+  fill: none;
+  stroke: var(--ink-faint);
+  stroke-width: 1.5;
+  stroke-dasharray: 3 3;
+  opacity: 0;
+  animation: pop-in 0.4s ease-out forwards;
+}
+
+@keyframes pop-in {
+  from { opacity: 0; transform: scale(0.3); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.route-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: var(--step-2);
+}
+
+.route-card {
+  display: block;
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--paper-raised);
+  border: 1px solid var(--grid-line);
+  border-top: 3px solid var(--lane, var(--signal));
+  border-radius: var(--radius-md);
+  padding: var(--step-2) var(--step-3);
+  opacity: 0;
+  animation: card-in 0.5s ease-out forwards;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.route-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(16, 35, 63, 0.08);
+}
+
+@keyframes card-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.route-card-category {
+  font-size: var(--step-0);
+  color: var(--lane, var(--ink-faint));
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.route-card h3 {
+  margin: 0.3em 0 0.3em 0;
+  font-size: var(--step-3);
+}
+
+.route-card p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: var(--step-1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .route-line-pulse { animation: none; stroke-dashoffset: -8; }
+  .route-station, .route-card { animation: none; opacity: 1; }
+}

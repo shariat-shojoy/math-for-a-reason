@@ -1,0 +1,115 @@
+/*
+  Design direction: "blueprint notebook"
+  The subject is graphs, grids, and precise mechanical steps — so the surface
+  itself is graph paper, and the accent is the amber of a hand-drawn
+  highlight pen marking up a diagram. Ink navy, not black, for warmth.
+*/
+
+:root {
+  /* ---- Color: paper & ink ---- */
+  --paper: #F0F4F8;
+  --paper-raised: #FFFFFF;
+  --grid-line: #C9D6E3;
+  --grid-line-faint: #DCE5EE;
+  --ink: #10233F;
+  --ink-soft: #3C5170;
+  --ink-faint: #7488A2;
+
+  /* ---- Color: signal (accent) ---- */
+  --signal: #F2A93C;
+  --signal-dim: #F6C978;
+  --signal-ink: #6B4200;
+
+  /* ---- Color: state ---- */
+  --visited: #2E8B57;
+  --visited-soft: #CFE8D9;
+  --current: #D64545;
+  --current-soft: #F6D3D3;
+  --edge-idle: #A9BAD0;
+
+  /* ---- Category accent lanes (for the home route-map) ---- */
+  --lane-graph: #2E6F8E;
+  --lane-hash: #B9552C;
+  --lane-flow: #5B7C9E;
+  --lane-geometry: #6E4C9E;
+
+  /* ---- Dark ink surface (used for code / "watch it think" panels) ---- */
+  --slate: #0E1B2E;
+  --slate-raised: #172A44;
+  --slate-line: #2A3F5C;
+  --slate-text: #DCE6F0;
+
+  /* ---- Type ---- */
+  --font-display: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --step-0: 0.75rem;
+  --step-1: 0.875rem;
+  --step-2: 1rem;
+  --step-3: 1.25rem;
+  --step-4: 1.75rem;
+  --step-5: 2.5rem;
+  --step-6: 3.5rem;
+
+  /* ---- Layout ---- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --content-width: 780px;
+  --page-width: 1180px;
+
+  --grid-cell: 28px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--step-2);
+  line-height: 1.6;
+  background-image:
+    linear-gradient(var(--grid-line-faint) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line-faint) 1px, transparent 1px);
+  background-size: var(--grid-cell) var(--grid-cell);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  margin: 0 0 0.5em 0;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: inherit;
+}
+
+code, pre, .mono {
+  font-family: var(--font-mono);
+}
+
+::selection {
+  background: var(--signal);
+  color: var(--signal-ink);
+}
+
+:focus-visible {
+  outline: 2.5px solid var(--signal);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

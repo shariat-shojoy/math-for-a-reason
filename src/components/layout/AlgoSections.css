@@ -1,0 +1,118 @@
+.section {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--step-6) var(--step-3);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--step-0);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-faint);
+  margin: 0 0 var(--step-2) 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 18px;
+  height: 1px;
+  background: var(--ink-faint);
+  display: inline-block;
+}
+
+.eyebrow-signal { color: var(--signal-ink); }
+.eyebrow-signal::before { background: var(--signal); height: 2px; }
+
+.eyebrow-inverse { color: var(--signal-dim); }
+.eyebrow-inverse::before { background: var(--signal-dim); }
+
+/* Hook */
+.hook-question {
+  font-size: clamp(1.5rem, 3.4vw, 2.1rem);
+  line-height: 1.25;
+  max-width: 20ch;
+}
+.hook-body {
+  font-size: var(--step-3);
+  color: var(--ink-soft);
+  max-width: 60ch;
+}
+
+/* Idea */
+.idea-body {
+  font-size: var(--step-3);
+  color: var(--ink-soft);
+}
+.idea-body p { margin: 0 0 1em 0; }
+.idea-body strong { color: var(--ink); }
+
+/* Watch it think — full-bleed dark panel, the "lab bench" */
+.watch {
+  max-width: none;
+  padding: var(--step-5) 0;
+  background: var(--slate);
+  background-image:
+    linear-gradient(var(--slate-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--slate-line) 1px, transparent 1px);
+  background-size: var(--grid-cell) var(--grid-cell);
+  color: var(--slate-text);
+  border-top: 1px solid var(--lane, var(--signal));
+  border-bottom: 1px solid var(--lane, var(--signal));
+}
+.watch .eyebrow { padding: 0 var(--step-3); }
+.watch-body {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 var(--step-3);
+}
+
+/* Where it lives */
+.lives-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1px;
+  background: var(--grid-line);
+  border: 1px solid var(--grid-line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.lives-list li {
+  background: var(--paper-raised);
+  padding: var(--step-2) var(--step-3);
+  display: grid;
+  grid-template-columns: minmax(140px, 220px) 1fr;
+  gap: var(--step-3);
+  align-items: baseline;
+}
+.lives-system {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: var(--step-1);
+  color: var(--ink);
+}
+.lives-detail {
+  color: var(--ink-soft);
+  font-size: var(--step-1);
+}
+@media (max-width: 640px) {
+  .lives-list li { grid-template-columns: 1fr; gap: 0.25em; }
+}
+
+/* Now you try */
+.try {
+  background: var(--paper-raised);
+  border: 1.5px dashed var(--signal);
+  border-radius: var(--radius-md);
+  max-width: calc(var(--content-width) + 2 * var(--step-3));
+  margin: var(--step-6) auto;
+}
+.try-body {
+  font-size: var(--step-2);
+  color: var(--ink-soft);
+}

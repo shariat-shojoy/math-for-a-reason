@@ -1,0 +1,34 @@
+.algo-hero {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--step-5) var(--step-3) var(--step-4);
+  border-bottom: 3px solid var(--lane, var(--signal));
+}
+
+.algo-back {
+  display: block;
+  font-size: var(--step-0);
+  color: var(--ink-faint);
+  text-decoration: none;
+  margin-bottom: var(--step-3);
+}
+.algo-back:hover { color: var(--ink); }
+
+.algo-category {
+  display: block;
+  font-size: var(--step-0);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--lane, var(--ink-faint));
+  margin-bottom: 0.5em;
+}
+
+.algo-hero h1 {
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+}
+
+.algo-hero p {
+  font-size: var(--step-3);
+  color: var(--ink-soft);
+  max-width: 50ch;
+}

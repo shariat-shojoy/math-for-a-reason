@@ -1,0 +1,80 @@
+.ufviz {
+  display: flex;
+  flex-direction: column;
+  gap: var(--step-2);
+  align-items: center;
+}
+
+.ufviz-stage {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1 / 1;
+}
+.ufviz-stage-small {
+  max-width: 340px;
+}
+
+.ufviz-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.uf-edge {
+  stroke-width: 2;
+  transition: stroke 0.2s ease;
+}
+.uf-edge-merged { stroke: var(--slate-text); opacity: 0.5; }
+.uf-edge-cycle { stroke: var(--current); opacity: 0.8; }
+.uf-edge-current { stroke: var(--signal); opacity: 1; stroke-width: 3; }
+
+.uf-node {
+  stroke: var(--slate);
+  stroke-width: 2;
+  transition: fill 0.25s ease;
+}
+.uf-node-clickable { cursor: pointer; }
+.uf-node-group:hover .uf-node-clickable { filter: brightness(1.15); }
+.uf-node-selected {
+  stroke: #ffffff;
+  stroke-width: 3;
+}
+
+.uf-node-label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  fill: var(--slate);
+}
+
+.uf-note {
+  min-height: 1.4em;
+  font-size: var(--step-1);
+  color: var(--signal-dim);
+  text-align: center;
+}
+
+.uf-freeplay {
+  margin-top: var(--step-4);
+  padding-top: var(--step-4);
+  border-top: 1px dashed var(--slate-line);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--step-1);
+  width: 100%;
+}
+
+.uf-reset-btn {
+  font-family: var(--font-mono);
+  font-size: var(--step-0);
+  background: transparent;
+  color: var(--slate-text);
+  border: 1px solid var(--slate-line);
+  border-radius: var(--radius-sm);
+  padding: 0.4em 1em;
+  cursor: pointer;
+}
+.uf-reset-btn:hover {
+  border-color: var(--signal);
+  color: var(--signal);
+}
